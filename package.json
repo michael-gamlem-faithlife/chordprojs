@@ -1,14 +1,20 @@
 {
-  "name": "chordprojs",
-  "version": "0.1.1",
+  "name": "@faithlife/chordprojs",
+  "version": "0.1.2",
   "description": "Parse and manipulate ChordPro files.",
   "main": "src/chordpro.js",
+  "publishConfig": {
+		"registry": "http://npm.faithlife.io"
+	},
+	"files": [
+		"dist/"
+	],
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/tvdavies/chordprojs.git"
+    "url": "git+ssh://git@github.com/michael-gamlem-faithlife/chordprojs.git"
   },
   "keywords": [
     "ChordPro"
