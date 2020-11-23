@@ -91,7 +91,7 @@ var chordExtendeds = {
   AugmentedMajor7: ['Major', ['maj7#5', 'maj7(#5]']],
 
   // TODO: I don't know what this one is - can't find it on wikipedia
-  Minor9: ['Minor', ['min9', 'm9', 'minor9']],
+  Minor9: ['Minor', ['min9', 'm9', 'minor9']]
 };
 
 function initializeChordRegexes () {
@@ -284,13 +284,19 @@ function parseObject (match, noteNaming) {
     // substring(1) to cut off the slash, because it's e.g. "/F"
     res.overridingRoot = rootLookups[noteNaming][match[5].substring(1)];
   }
+  
+  var notParsable = match && match.input;
+  for (var i = 0; i < 6; i++) {
+    notParsable = notParsable.replace(match[i], "");
+  }
+
+  if(notParsable) {res.notParsable = notParsable;}
 
   return res
 }
 
 function parse (str, opts) {
-	if (str === "Cno3") { debugger; }
-	opts = opts || {};
+  opts = opts || {};
   var noteNaming = opts.naming || 'English';
 
   var match = str.match(chordRegexes[noteNaming].pattern);
@@ -316,8 +322,7 @@ function prettyPrint (chord, opts) {
   // instead of sharps, or prefer certain flats to certain sharps, etc.
   // (e.g. 'Bb' seems to be more common than 'A#', but 'F#' is more common than 'Ab')
 
-  var str; 
-  if (chord.root) { toPrintableNote(chord.root); }
+  var str = toPrintableNote(chord.root);
   if (chord.extended) {
     str += chordExtendeds[chord.extended][1][0];
   } else {
@@ -18294,7 +18299,7 @@ module.exports = {
  */
 
 var _ = require('lodash'),
-    chordMagic = require('chord-magic');
+    chordMagic = require('@faithlife/chord-magic');
 
 var notes = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab'];
 var sharps = ['A', 'B', 'D', 'E', 'G'];
@@ -18481,7 +18486,7 @@ Chords.prototype.createChord = function (chordText) {
 
 module.exports = Chords;
 
-},{"chord-magic":1,"lodash":2}],6:[function(require,module,exports){
+},{"@faithlife/chord-magic":1,"lodash":2}],6:[function(require,module,exports){
 'use strict';
 
 /*

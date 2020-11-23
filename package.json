@@ -6,9 +6,6 @@
   "publishConfig": {
 		"registry": "http://npm.faithlife.io"
 	},
-	"files": [
-		"dist/"
-	],
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha"
   },
