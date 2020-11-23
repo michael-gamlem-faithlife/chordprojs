@@ -52,7 +52,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "chord-magic": "^2.1.1",
+    "@faithlife/chord-magic": "^2.1.2",
     "lodash": "^4.13.1",
     "mustache": "^2.2.1"
   }

@@ -7,7 +7,7 @@
  */
 
 var _ = require('lodash'),
-    chordMagic = require('chord-magic');
+    chordMagic = require('@faithlife/chord-magic');
 
 var notes = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab'];
 var sharps = ['A', 'B', 'D', 'E', 'G'];
