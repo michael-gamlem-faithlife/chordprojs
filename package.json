@@ -1,6 +1,6 @@
 {
   "name": "@faithlife/chordprojs",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Parse and manipulate ChordPro files.",
   "main": "src/chordpro.js",
   "publishConfig": {
